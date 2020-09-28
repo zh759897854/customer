@@ -2,11 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Platform from './common/platform'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+//将平台验证方法添加到全局
+let platform =  Platform();
+Vue.prototype.$Plateform = platform;
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
