@@ -1,114 +1,114 @@
 <style lang="less">
-#pc {
-  min-width: 1100px;
-  overflow: hidden;
-  /*头部样式*/
-  .pc-header {
-    height: 86px;
-    margin: 20px 50px;
-    .header-item {
-      float: left;
-      text-align: center;
-    }
-    .pc-logo {
-      width: 250px;
-      border-right: 1px dashed #e5e5e5;
-      p {
-        text-align: left;
-      }
-      p:first-child {
-        font-size: 42px;
-        font-weight: bold;
-        color: #144089;
-        letter-spacing: 16px;
-      }
-      p:last-child {
-        font-size: 24px;
-        font-weight: 300;
-        color: #144089;
-      }
-    }
-    .pc-online-tec {
-      width: 305px;
-      padding-left: 30px;
-      p:first-child {
-        padding: 5px 20px;
-        background: #144089;
-        color: white;
-        border-radius: 4px;
-        font-size: 28px;
-        margin: 5px;
-      }
-      p:last-child{
-        font-size: 24px;
-        color: #333;
-        line-height: 18px;
+  #pc {
+    min-width: 1100px;
+    overflow: hidden;
+    /*头部样式*/
+    .pc-header {
+      height: 86px;
+      margin: 20px 50px;
+      .header-item {
+        float: left;
         text-align: center;
-        margin-top: 10px;
+      }
+      .pc-logo {
+        width: 250px;
+        border-right: 1px dashed #e5e5e5;
+        p {
+          text-align: left;
+        }
+        p:first-child {
+          font-size: 42px;
+          font-weight: bold;
+          color: #144089;
+          letter-spacing: 16px;
+        }
+        p:last-child {
+          font-size: 24px;
+          font-weight: 300;
+          color: #144089;
+        }
+      }
+      .pc-online-tec {
+        width: 305px;
+        padding-left: 30px;
+        p:first-child {
+          padding: 5px 20px;
+          background: #144089;
+          color: white;
+          border-radius: 4px;
+          font-size: 28px;
+          margin: 5px;
+        }
+        p:last-child{
+          font-size: 24px;
+          color: #333;
+          line-height: 18px;
+          text-align: center;
+          margin-top: 10px;
+        }
       }
     }
-  }
 
-  /*banner样式*/
-  .pc-banner {
-    width: 100%;
-    img {
+    /*banner样式*/
+    .pc-banner {
       width: 100%;
-    }
-  }
-
-  /*body样式*/
-  .pc-body {
-    .pc-body-title {
-      text-align: center;
-      white-space: nowrap;
-      h5 {
-        margin: 0 10px 0 10px;
-        display: inline-block;
-        font-size: 48px;
-        font-weight: bold;
-        color: #144089;
-      }
       img {
-        display: inline-block;
-        width: 483px;
-        padding-bottom: 10px;
+        width: 100%;
       }
     }
-    .En-title {
-      font-size: 28px;
-      text-align: center;
-      color: #333333;
-    }
-    .pc-school-name {
-      ul {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        padding: 20px 180px 0 180px;
-        li {
+
+    /*body样式*/
+    .pc-body {
+      .pc-body-title {
+        text-align: center;
+        white-space: nowrap;
+        h5 {
+          margin: 0 10px 0 10px;
           display: inline-block;
-          img {
-            width: 80px;
-            margin: 0 auto;
-            display: block;
-          }
-          span {
-            text-align: center;
-            font-size: 30px;
-            color: #666666;
-          }
-          span:hover {
-            color: #144089;
-            padding-bottom: 5px;
-            font-weight: bold;
-            border-bottom: 4px solid #144089;
+          font-size: 48px;
+          font-weight: bold;
+          color: #144089;
+        }
+        img {
+          display: inline-block;
+          width: 483px;
+          padding-bottom: 10px;
+        }
+      }
+      .En-title {
+        font-size: 28px;
+        text-align: center;
+        color: #333333;
+      }
+      .pc-school-name {
+        ul {
+          display: flex;
+          flex-flow: row;
+          justify-content: space-between;
+          padding: 20px 180px 0 180px;
+          li {
+            display: inline-block;
+            img {
+              width: 80px;
+              margin: 0 auto;
+              display: block;
+            }
+            span {
+              text-align: center;
+              font-size: 30px;
+              color: #666666;
+            }
+            span:hover {
+              color: #144089;
+              padding-bottom: 5px;
+              font-weight: bold;
+              border-bottom: 4px solid #144089;
+            }
           }
         }
       }
     }
   }
-}
 </style>
 
 <template>
