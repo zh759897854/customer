@@ -154,7 +154,18 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div>bn
+
+    <!--<div class="main-body">-->
+      <!--<div class="table-cell">-->
+        <!--<div class="cell-left">-->
+          <!--<img :src="" alt="/">-->
+        <!--</div>-->
+        <!--<div class="cell-right">-->
+          <!--<img :src="" alt="/">-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 
