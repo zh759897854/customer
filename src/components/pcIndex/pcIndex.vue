@@ -31,10 +31,14 @@
         top: 50%;
         left: 50%;
         margin-top: -50px;
-        margin-left: -100px;
+        margin-left: -400px;
         p {
+          text-align: center;
           font-size: 60px;
           color: #fff;
+        }
+        .study-abroad {
+          font-size: 50px;
         }
       }
     }
@@ -50,7 +54,7 @@
         </ul>
         <img class="main-banner" :src="banner_img1" alt="" />
         <div class="text-container">
-          <p>专注马来西亚留学</p>
+          <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
           <p>Focus On Studying in Mamaysia</p>
         </div>
