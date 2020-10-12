@@ -30,17 +30,56 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -50px;
+        margin-top: -150px;
         margin-left: -400px;
         p {
           text-align: center;
           font-size: 60px;
-          color: #fff;
+          color: #e5e5e5;
         }
-        .study-abroad {
-          font-size: 50px;
-        }
+				p:nth-child(3) {
+					font-size: 50px
+				}
+				.study-abroad {
+					font-size: 40px;
+					color: #fff;
+				}
+				span {
+					font-size: 18px;
+					color: #fff;
+						i {
+								display: inline-block;
+								width: 5px;
+								height: 5px;
+								background: #fff;
+								border-radius: 100%;
+								vertical-align: middle;
+								margin: 0 8px;
+						}
+				}
       }
+				.btn {
+						position: absolute;
+						top: 60%;
+						color: #fff;
+						font-size: 20px;
+				}
+				.learn-more {
+						padding: 10px 15px;
+						left: 280px;
+						background: #18b4de;
+				}
+				.flip {
+						right: 350px;
+						span {
+							font-size: 30px;
+							display: inline-block;
+							padding: 5px 10px;
+							margin-right: 5px;
+							background: #18b4de;
+						}
+						
+				}
     }
   }
 </style>
@@ -57,6 +96,21 @@
           <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
           <p>Focus On Studying in Mamaysia</p>
+          <div>
+          	<span>音乐学相关<i></i></span>
+          	<span>体育学相关<i></i></span>
+          	<span>美术学<i></i></span>
+          	<span>设计学<i></i></span>
+          	<span>传媒学<i></i></span>
+          	<span>教育学相关<i></i></span>
+          	<span>医学相关<i></i></span>
+          	<span>法学相关</span>
+          </div>
+        </div>
+        <div class="btn learn-more">了解更多</div>
+        <div class="btn flip">
+        	<span>&lt;</span>
+        	<span>&gt;</span>
         </div>
       </div>
       <div class="banner-minor"></div>
