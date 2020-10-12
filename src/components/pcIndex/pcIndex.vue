@@ -26,6 +26,17 @@
         opacity:0.6;
         filter: alpha(opacity=60);
       }
+      .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
+        p {
+          font-size: 60px;
+          color: #fff;
+        }
+      }
     }
   }
 </style>
@@ -38,6 +49,11 @@
           <li class="nav-title" v-for="(item, index) in nav">{{item}}</li>
         </ul>
         <img class="main-banner" :src="banner_img1" alt="" />
+        <div class="text-container">
+          <p>专注马来西亚留学</p>
+          <p>全世界学费较低的硕博留学</p>
+          <p>Focus On Studying in Mamaysia</p>
+        </div>
       </div>
       <div class="banner-minor"></div>
     </div>
