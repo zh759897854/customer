@@ -27,4 +27,20 @@
       -moz-osx-font-smoothing: grayscale;
       background: #fff;
     }
+    /* 设置滚动条的样式 */
+    ::-webkit-scrollbar {
+      width:6px;
+      background-color: #eee;
+    }
+
+    /* 滚动槽 */
+    ::-webkit-scrollbar-track {
+      border-radius:6px;
+    }
+
+    /* 滚动条滑块 */
+    ::-webkit-scrollbar-thumb {
+      border-radius:6px;
+      background: #999;
+    }
 </style>

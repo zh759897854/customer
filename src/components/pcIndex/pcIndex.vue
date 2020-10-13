@@ -21,7 +21,7 @@
           background-color: #1f90e6;
         }
       }
-      .main-banner {
+      .main-banner-back {
         width: 100%;
         opacity:0.6;
         filter: alpha(opacity=60);
@@ -37,49 +37,85 @@
           font-size: 60px;
           color: #e5e5e5;
         }
-				p:nth-child(3) {
-					font-size: 50px
-				}
-				.study-abroad {
-					font-size: 40px;
-					color: #fff;
-				}
-				span {
-					font-size: 18px;
-					color: #fff;
-						i {
-								display: inline-block;
-								width: 5px;
-								height: 5px;
-								background: #fff;
-								border-radius: 100%;
-								vertical-align: middle;
-								margin: 0 8px;
-						}
-				}
+        p:nth-child(3) {
+          font-size: 50px
+        }
+        .study-abroad {
+          font-size: 40px;
+          color: #fff;
+        }
+        span {
+          font-size: 18px;
+          color: #fff;
+          i {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+            border-radius: 100%;
+            vertical-align: middle;
+            margin: 0 8px;
+          }
+        }
       }
-				.btn {
-						position: absolute;
-						top: 60%;
-						color: #fff;
-						font-size: 20px;
-				}
-				.learn-more {
-						padding: 10px 15px;
-						left: 280px;
-						background: #18b4de;
-				}
-				.flip {
-						right: 350px;
-						span {
-							font-size: 30px;
-							display: inline-block;
-							padding: 5px 10px;
-							margin-right: 5px;
-							background: #18b4de;
-						}
-						
-				}
+      .btn {
+        position: absolute;
+        top: 60%;
+        color: #fff;
+        font-size: 20px;
+      }
+      .learn-more {
+        padding: 10px 15px;
+        left: 280px;
+        background: #18b4de;
+      }
+      .flip {
+        right: 350px;
+        span {
+          font-size: 30px;
+          display: inline-block;
+          padding: 5px 10px;
+          margin-right: 5px;
+          background: #18b4de;
+        }
+
+      }
+    }
+    .banner-minor {
+      position: relative;
+      background-color: #000;
+      .banner-minor-back {
+        width: 100%;
+        opacity:0.6;
+        filter: alpha(opacity=60);
+      }
+      .certificate {
+        width: 280px;
+        position: absolute;
+        top: 50%;
+        margin-top: -190px;
+        right: 200px;
+        z-index: 2;
+      }
+      .text-container {
+        position: absolute;
+        left: 200px;
+        top: 50%;
+        margin-top: -150px;
+        z-index: 2;
+        p {
+          color: #fff;
+          line-height: 25px;
+          word-spacing: 2px;
+        }
+        p:nth-child(1) {
+           font-size: 25px;
+        }
+        p:nth-child(2) {
+          font-size: 20px;
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 </style>
@@ -91,29 +127,38 @@
         <ul class="page-nav">
           <li class="nav-title" v-for="(item, index) in nav">{{item}}</li>
         </ul>
-        <img class="main-banner" :src="banner_img1" alt="" />
+        <img class="main-banner-back" :src="banner_img1" alt="" />
         <div class="text-container">
           <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
           <p>Focus On Studying in Mamaysia</p>
           <div>
-          	<span>音乐学相关<i></i></span>
-          	<span>体育学相关<i></i></span>
-          	<span>美术学<i></i></span>
-          	<span>设计学<i></i></span>
-          	<span>传媒学<i></i></span>
-          	<span>教育学相关<i></i></span>
-          	<span>医学相关<i></i></span>
-          	<span>法学相关</span>
+            <span>音乐学相关<i></i></span>
+            <span>体育学相关<i></i></span>
+            <span>美术学<i></i></span>
+            <span>设计学<i></i></span>
+            <span>传媒学<i></i></span>
+            <span>教育学相关<i></i></span>
+            <span>医学相关<i></i></span>
+            <span>法学相关</span>
           </div>
         </div>
         <div class="btn learn-more">了解更多</div>
         <div class="btn flip">
-        	<span>&lt;</span>
-        	<span>&gt;</span>
+          <span>&lt;</span>
+          <span>&gt;</span>
         </div>
       </div>
-      <div class="banner-minor"></div>
+      <div class="banner-minor">
+        <img class="banner-minor-back" :src="banner_img2" alt="" />
+        <div class="text-container">
+          <p>关于树人留学</p>
+          <p>about study aboard</p>
+          <p>树人教育是马来西亚留学联会在中国设立的服务<br/>中心，专注马来西亚本硕博留学和寒暑假<br/>游学项目，为多种需求上学人群量身定制留学<br/>方案并提供高质量服务。
+            <br/>树人留学是马来西亚留学联会唯一的中国办事<br/>处，拥有多所大学的招生资质。</p>
+        </div>
+        <img class="certificate" :src="certificate_img" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -124,6 +169,8 @@
     data() {
       return {
         banner_img1: require('../../assets/back/back-banner1.jpg'),
+        banner_img2: require('../../assets/back/back-banner2.jpg'),
+        certificate_img: require('../../assets/certificate.png'),
         nav: [
           '首页',
           '关于树人',
