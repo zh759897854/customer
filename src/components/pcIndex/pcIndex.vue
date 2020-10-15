@@ -240,6 +240,12 @@
             </li>
           </ul>
         </div>
+        <section class="introduce-container">
+          <div class="introduce-item">
+            <div class="item-left"></div>
+            <div class="item-right"></div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
