@@ -27,6 +27,7 @@
       -moz-osx-font-smoothing: grayscale;
       background: #fff;
     }
+
     /* 设置滚动条的样式 */
     ::-webkit-scrollbar {
       width:6px;

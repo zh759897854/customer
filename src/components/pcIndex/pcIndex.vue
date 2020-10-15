@@ -1,5 +1,14 @@
 <style lang="less">
   #pc {
+    .icon-cricle {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: #000;
+      border-radius: 100%;
+      vertical-align: middle;
+      margin: 0 8px;
+    }
     .banner-main {
       position: relative;
       min-height: 200px;
@@ -117,6 +126,56 @@
         }
       }
     }
+    .main-page {
+      width: 80%;
+      min-width: 1200px;
+      background-color: #a0bccf;
+      padding-bottom: 20px;
+      margin: 0 auto;
+      .slogen-text {
+        text-align: center;
+        color: #000;
+        padding: 15px 0;
+      }
+      .school-nav {
+        text-align: center;
+        .university {
+          display: inline-block;
+          background-color: #41627c;
+          padding: 2px 10px;
+          font-weight: 600;
+          color: #000;
+        }
+        .Private-university {
+          padding-right: 50px;
+          clip-path: polygon(0 0, 124px 0, 85px 25px, 0 124px);
+          margin-right: -17px;
+        }
+        .public-university {
+          padding-left: 50px;
+          margin-left: -17px;
+          clip-path: polygon(39px 0, 124px 0, 124px 25px, 0 25px);
+        }
+      }
+      .school-logo {
+        padding-top: 15px;
+        width: 800px;
+        margin: 0 auto;
+        ul {
+          display: flex;
+          flex-flow: row;
+          justify-content: space-between;
+          align-items: center;
+          p {
+            text-align: center;
+            letter-spacing: 3px;
+          }
+        }
+        .school_lgr {
+          width: 195px;
+        }
+      }
+    }
   }
 </style>
 
@@ -159,6 +218,29 @@
         </div>
         <img class="certificate" :src="certificate_img" alt="" />
       </div>
+      <div class="main-page">
+        <div class="slogen-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</div>
+        <div class="school-nav">
+          <span class="university Private-university">私立大学</span>
+          <span class="university public-university">公立大学</span>
+        </div>
+        <div class="school-logo">
+          <ul>
+            <li>
+              <img class="school_lgr" :src="school_lgr" alt="" />
+              <p>林国荣创意科技大学</p>
+            </li>
+            <li>
+              <img class="school_tl" :src="school_tl" alt="" />
+              <p>泰莱大学</p>
+            </li>
+            <li>
+              <img class="school_sty" :src="school_sty" alt="" />
+              <p>思特雅大学</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -171,6 +253,9 @@
         banner_img1: require('../../assets/back/back-banner1.jpg'),
         banner_img2: require('../../assets/back/back-banner2.jpg'),
         certificate_img: require('../../assets/certificate.png'),
+        school_lgr: require('../../assets/icon/icon-school-lgrkji.jpg'),
+        school_tl: require('../../assets/icon/icon-school-sty.jpg'),
+        school_sty: require('../../assets/icon/icon-school-tl.jpg'),
         nav: [
           '首页',
           '关于树人',
