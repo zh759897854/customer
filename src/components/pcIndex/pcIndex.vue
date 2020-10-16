@@ -1,5 +1,8 @@
 <style lang="less">
   #pc {
+    img {
+      width: 100px;
+    }
     .icon-cricle {
       display: inline-block;
       width: 5px;
@@ -175,6 +178,83 @@
           width: 195px;
         }
       }
+      .advantage {
+        background-color: #fff;
+        h5 {
+          font-size: 20px;
+          text-align: center;
+          color: #000;
+        }
+        h6 {
+          width: 200px;
+          padding: 15px 0;
+          font-size: 13px;
+          color: #000;
+          text-align: center;
+          border-bottom: 1px solid #e5e5e5;
+          margin: 0 auto;
+        }
+        ul {
+          margin-top: 40px;
+          li {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 20%;
+            padding: 0 10px;
+            > div {
+              box-shadow: 0 0 5px #e5e5e5;
+              text-align: center;
+              padding-bottom: 40px;
+              p {
+                padding: 5px 0;
+              }
+              div {
+                padding: 60px 0;
+              }
+            }
+          }
+        }
+      }
+      .offer-container {
+        background-color: #e5e5e5;
+        h5 {
+          font-size: 20px;
+          text-align: center;
+          color: #000;
+        }
+        h6 {
+          width: 200px;
+          padding: 15px 0;
+          font-size: 13px;
+          color: #000;
+          text-align: center;
+          border-bottom: 1px solid #999;
+          margin: 0 auto;
+        }
+        .school-list {
+          ul {
+            white-space: normal;
+          }
+          li {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100%/3;
+            padding: 20px;
+            > div {
+              background-color: #999;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              border-radius: 8px;
+              div {
+                display: inline-block;
+                img {
+                  width: 80px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 </style>
@@ -242,8 +322,84 @@
         </div>
         <section class="introduce-container">
           <div class="introduce-item">
-            <div class="item-left"></div>
-            <div class="item-right"></div>
+            <div class="item-left">
+              <img :src="school_lgr" alt="" />
+            </div>
+            <div class="item-right">
+              <p>Limkokwing University of Creative Technology</p>
+              <p>林国荣创意科技大学是亚洲高水平、特色大学，是英联邦国家马来西亚知名综合性大学，
+                马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，
+                得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、
+                全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。</p>
+            </div>
+          </div>
+          <div class="introduce-item">
+            <div class="item-left">
+              <img :src="school_lgr1" alt="" />
+            </div>
+            <div class="item-right">
+              <p>林国荣创意科技大学</p>
+              <p>Limkokwing University of Creative Technology</p>
+              <ul>
+                <li>学费：¥3万/3年</li>
+                <li>授课语言：英文授课、全程协助</li>
+                <li>申请日期：全年</li>
+                <li>入学日期：全年均可</li>
+              </ul>
+            </div>
+          </div>
+          <div class="introduce-item">
+            <div class="item-left">
+              <p>项目特点</p>
+              <p>Project characteristics</p>
+              <ul>
+                <li>马来西亚排名 No.3 亚洲排名 No.219 （2021）</li>
+                <li>3年可毕业、毕业轻松，一年境外时间不超过2个月</li>
+                <li>回国可做中留服学历认证，认证为全日制博士PHD</li>
+              </ul>
+            </div>
+            <div class="item-right">
+              <img :src="school_lgr2" alt="" />
+            </div>
+          </div>
+          <div class="hot-professional">
+            <div>热门专业</div>
+            <p>
+              <span v-for="(item, inx) in lgrHot">
+                {{item}}
+                <i class="icon-cricle"></i>
+              </span>
+            </p>
+          </div>
+        </section>
+        <section class="advantage">
+          <h5>五大优势</h5>
+          <h6>advantage</h6>
+          <ul>
+            <li v-for="(tage, ind) in tages" :key="ind">
+              <div>
+                <div class="tage-title">{{tage.title}}</div>
+                <p v-for="(tageItem, ing) in tage.data" :key="ing">{{tageItem}}</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="offer-container">
+          <h5>一切以offer为导向</h5>
+          <h6>Guiding for applying offers</h6>
+          <div class="school-list">
+            <ul>
+              <li v-for="(list, inv) in schoolList" :key="inv">
+                <div>
+                  <div class="list-left">
+                    <img :src="list.imgSrc" alt="" />
+                  </div>
+                  <div class="list-right">
+                    <p v-for="(listItem, inc) in list.data" :key="inc">{{listItem}}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       </div>
@@ -270,6 +426,104 @@
           '成功案例',
           '留学指南',
           '联系我们'
+        ],
+        school_lgr1: require('../../assets/back/university-lgr1.jpg'),
+        school_lgr2: require('../../assets/back/university-lgr2.jpg'),
+        lgrHot: ['音乐', '美术', '体育', '医科', '传媒', '心理学', '法律',
+                   '社会学', '社会科学与管理学' ,'语言学', '工程技术', '社会科学',  
+          '管理学' ,'法学' ,'电子电气工程' ,'计算机科学', '土木工程' ,'化学工程' ,
+          '传媒学' ,'建筑学' ,'现代语言学'],
+        tages: [
+          {
+            title: '免联考推荐入学',
+            data: [
+              '学院资质审核',
+              '不用参加国内严格的博士考试',
+              '免试入学'
+            ]
+          },
+          {
+            title: '时间灵活',
+            data: [
+              '博士课程时间学习灵活',
+              '周末授课，一月一次',
+              '不定期论坛、讲座增值服务'
+            ]
+          },
+          {
+            title: '权威认证',
+            data: [
+              '马来西亚DBA课程体系',
+              '博士学位国际通用',
+              '校友资源全球化'
+            ]
+          },
+          {
+            title: '轻松获取学位',
+            data: [
+              '只要按照要求修满学分',
+              '完成毕业论文',
+              '通过答辩即可授予学位'
+            ]
+          },
+          {
+            title: '证书含金量高',
+            data: [
+              '与出国留学获取的完全一致',
+              '学位国际双认可大学',
+              '文凭可用于公司上市移民加分'
+            ]
+          }
+        ],
+        schoolList: [
+          {
+            imgSrc: require('../../assets/icon/icon-school-mlxy.jpg'),
+            data: [
+              '录取院校 马来亚大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
+          {
+            imgSrc: require('../../assets/icon/icon-school-gl.jpg'),
+            data: [
+              '录取院校 国立大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
+          {
+            imgSrc: require('../../assets/icon/icon-school-lg.jpg'),
+            data: [
+              '录取院校 理工大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
+          {
+            imgSrc: require('../../assets/icon/icon-school-lgrkji.jpg'),
+            data: [
+              '录取院校 林国荣创意科技大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
+          {
+            imgSrc: require('../../assets/icon/icon-school-tl.jpg'),
+            data: [
+              '录取院校 泰莱大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
+          {
+            imgSrc: require('../../assets/icon/icon-school-sty.jpg'),
+            data: [
+              '录取院校 思特雅大学',
+              '申请背景',
+              '基本成绩'
+            ]
+          },
         ]
       }
     },
