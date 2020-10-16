@@ -255,6 +255,23 @@
           }
         }
       }
+      .guide {
+        background-color: #fff;
+        h5 {
+          font-size: 20px;
+          text-align: center;
+          color: #000;
+        }
+        h6 {
+          width: 200px;
+          padding: 15px 0;
+          font-size: 13px;
+          color: #000;
+          text-align: center;
+          border-bottom: 1px solid #999;
+          margin: 0 auto;
+        }
+      }
     }
   }
 </style>
@@ -262,12 +279,12 @@
 <template>
   <div id="pc">
     <div class="page-banner">
-      <div class="banner-main">
+      <section class="banner-main">
         <ul class="page-nav">
           <li class="nav-title" v-for="(item, index) in nav">{{item}}</li>
         </ul>
         <img class="main-banner-back" :src="banner_img1" alt="" />
-        <div class="text-container">
+        <section class="text-container">
           <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
           <p>Focus On Studying in Mamaysia</p>
@@ -281,14 +298,14 @@
             <span>医学相关<i></i></span>
             <span>法学相关</span>
           </div>
-        </div>
-        <div class="btn learn-more">了解更多</div>
-        <div class="btn flip">
+        </section>
+        <section class="btn learn-more">了解更多</section>
+        <section class="btn flip">
           <span>&lt;</span>
           <span>&gt;</span>
-        </div>
-      </div>
-      <div class="banner-minor">
+        </section>
+      </section>
+      <section class="banner-minor">
         <img class="banner-minor-back" :src="banner_img2" alt="" />
         <div class="text-container">
           <p>关于树人留学</p>
@@ -297,14 +314,14 @@
             <br/>树人留学是马来西亚留学联会唯一的中国办事<br/>处，拥有多所大学的招生资质。</p>
         </div>
         <img class="certificate" :src="certificate_img" alt="" />
-      </div>
-      <div class="main-page">
-        <div class="slogen-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</div>
-        <div class="school-nav">
+      </section>
+      <section class="main-page">
+        <section class="slogen-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
+        <section class="school-nav">
           <span class="university Private-university">私立大学</span>
           <span class="university public-university">公立大学</span>
-        </div>
-        <div class="school-logo">
+        </section>
+        <section class="school-logo">
           <ul>
             <li>
               <img class="school_lgr" :src="school_lgr" alt="" />
@@ -319,7 +336,7 @@
               <p>思特雅大学</p>
             </li>
           </ul>
-        </div>
+        </section>
         <section class="introduce-container">
           <div class="introduce-item">
             <div class="item-left">
@@ -402,7 +419,30 @@
             </ul>
           </div>
         </section>
-      </div>
+        <section class="guide">
+          <h5>留学指南</h5>
+          <h6>study guide</h6>
+        </section>
+      </section>
+      <section class="page-footer">
+        <div>
+          <div class="concat-box">
+            <p>联系我们</p>
+            <div>电话：16631136917</div>
+            <div>微信：16631136917</div>
+            <div>地址：河北省石家庄市金源商务广场B713</div>
+            <div>电子邮箱：12596258@qq.com</div>
+          </div>
+          <div class="QR-box">
+            <div>
+              <span>树人留学公众号二维码</span>
+            </div>
+            <div>
+              <span>微信Sally老师二维码</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
