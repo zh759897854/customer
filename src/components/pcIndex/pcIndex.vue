@@ -12,6 +12,15 @@
       vertical-align: middle;
       margin: 0 8px;
     }
+    .icon-mark {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #ea6e4a;
+      transform: rotate(45deg);
+      vertical-align: center;
+      margin-right: 10px;
+    }
     .banner-main {
       position: relative;
       min-height: 200px;
@@ -372,10 +381,14 @@
     }
     .page-footer {
       background-color: #999;
+      > div {
+        text-align: center;
+      }
       .concat-box {
         display: inline-block;
         padding-left: 50px;
         padding-right: 50px;
+        text-align: left;
         p {
           padding-top: 5px;
           padding-bottom: 15px;
@@ -481,10 +494,10 @@
               <p>林国荣创意科技大学</p>
               <p>Limkokwing University of Creative Technology</p>
               <ul>
-                <li>学费：¥3万/3年</li>
-                <li>授课语言：英文授课、全程协助</li>
-                <li>申请日期：全年</li>
-                <li>入学日期：全年均可</li>
+                <li><i class="icon-mark"></i>学费：¥3万/3年</li>
+                <li><i class="icon-mark"></i>授课语言：英文授课、全程协助</li>
+                <li><i class="icon-mark"></i>申请日期：全年</li>
+                <li><i class="icon-mark"></i>入学日期：全年均可</li>
               </ul>
             </div>
           </div>
@@ -493,9 +506,9 @@
               <p>项目特点</p>
               <p>Project characteristics</p>
               <ul>
-                <li>马来西亚排名 No.3 亚洲排名 No.219 （2021）</li>
-                <li>3年可毕业、毕业轻松，一年境外时间不超过2个月</li>
-                <li>回国可做中留服学历认证，认证为全日制博士PHD</li>
+                <li><i class="icon-mark"></i>马来西亚排名 No.3 亚洲排名 No.219 （2021）</li>
+                <li><i class="icon-mark"></i>3年可毕业、毕业轻松，一年境外时间不超过2个月</li>
+                <li><i class="icon-mark"></i>回国可做中留服学历认证，认证为全日制博士PHD</li>
               </ul>
             </div>
             <div class="item-right">
