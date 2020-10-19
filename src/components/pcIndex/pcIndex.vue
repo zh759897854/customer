@@ -410,8 +410,13 @@
       .guide-step-item {
         display: inline-block;
         width: 100%/6;
+        position: relative;
         .guide-step-text {
           padding: 5px 0;
+          white-space: nowrap;
+          position: absolute;
+          top: -50px;
+          left: -20px;
           i {
             display: inline-block;
             width: 40px;
@@ -423,7 +428,13 @@
             background-image: url("../../assets/icon/icon-logo-guide.jpg");
             background-size: 380px 60px;
             background-position: -13px -2px;
+            vertical-align: middle;
           }
+        }
+        .guide-step-icon {
+          display: inline-block;
+          height: 80px;
+          border-right: 1px solid #e5e5e5;
         }
       }
     }
@@ -583,6 +594,7 @@
             <div class="guide-step-item">
               <span class="guide-step-icon"></span>
               <span class="guide-step-text">
+                <i></i>
                 院校咨询
               </span>
               <i class="guide-step-circle"></i>
