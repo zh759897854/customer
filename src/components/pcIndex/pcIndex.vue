@@ -435,7 +435,22 @@
           display: inline-block;
           height: 80px;
           border-right: 1px solid #e5e5e5;
+          position: absolute;
         }
+        .guide-step-icon:nth-child(odd) {
+          top: 50px;
+        }
+        .guide-step-icon:nth-child(even) {
+          top: 0;
+        }
+        .loop(@n, @i: 1) when (@i =< @n) {
+          .guide-step-icon:nth-child(@{i}) {
+            left:  (100%/6)*@i;
+          }
+          .loop(@n, (@i + 1));
+        }
+
+        .loop(6);
       }
     }
   }
