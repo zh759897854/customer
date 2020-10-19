@@ -408,10 +408,12 @@
     }
     .guide-step {
       .guide-step-item {
+        box-sizing: border-box;
         display: inline-block;
         width: 100%/6;
         height: 100px;
         position: relative;
+        border-bottom: 1px solid #666;
         .guide-step-text {
           padding: 5px 0;
           white-space: nowrap;
@@ -434,9 +436,9 @@
         }
         .guide-step-icon {
           display: inline-block;
-          height: 80px;
-          border-right: 1px solid #e5e5e5;
+          height: 50px;
           position: absolute;
+          border-right: 1px solid #666;
         }
         .loop(@n, @i: 1) when (@i =< @n) {
           .guide-step-icon:nth-child(@{i}) {
@@ -449,15 +451,15 @@
       }
       .guide-step-item:nth-child(odd) {
         .guide-step-icon {
-          top: 100px;
+          bottom: 0;
         }
         .guide-step-text {
-          top: 130px;
+          top: 50px;
         }
       }
       .guide-step-item:nth-child(even) {
         .guide-step-icon {
-          top: 50px;
+          bottom: -50px;
         }
         .guide-step-text {
           top: 80px;
