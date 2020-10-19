@@ -233,13 +233,16 @@
             padding: 20px;
             > div {
               box-sizing: border-box;
-              background-color: #999;
+              background-color: #fff;
               -webkit-border-radius: 8px;
               -moz-border-radius: 8px;
               border-radius: 8px;
               padding: 10px;
+              box-shadow: 0 0 5px #e5e5e5;
               div {
                 display: inline-block;
+                vertical-align: middle;
+                white-space: nowrap;
                 img {
                   width: 80px;
                 }
