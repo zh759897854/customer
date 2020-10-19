@@ -37,20 +37,27 @@
         width: 100%;
         opacity:0.6;
         filter: alpha(opacity=60);
+        vertical-align: top;
       }
       .text-container {
         position: absolute;
         top: 50%;
         left: 50%;
         margin-top: -150px;
-        margin-left: -400px;
+        margin-left: -430px;
+        text-align: left;
+        letter-spacing: 4px;
         p {
           text-align: center;
           font-size: 60px;
           color: #e5e5e5;
         }
+        P:nth-child(2) {
+          letter-spacing: 12px;
+        }
         p:nth-child(3) {
-          font-size: 50px
+          font-size: 50px;
+          letter-spacing: 6px;
         }
         .study-abroad {
           font-size: 40px;
@@ -70,27 +77,36 @@
           }
         }
       }
-      .btn {
+      .learn-flip {
+        width: 860px;
+        height: 100px;
+        margin: 0 auto;
         position: absolute;
         top: 60%;
-        color: #fff;
-        font-size: 20px;
-      }
-      .learn-more {
-        padding: 10px 15px;
-        left: 280px;
-        background: #18b4de;
-      }
-      .flip {
-        right: 350px;
-        span {
-          font-size: 30px;
-          display: inline-block;
-          padding: 5px 10px;
-          margin-right: 5px;
+        left: 50%;
+        margin-left: -430px;
+        .btn {
+          position: absolute;
+          top: 0;
+          color: #fff;
+          font-size: 20px;
+        }
+        .learn-more {
+          padding: 10px 15px;
+          left: 0;
           background: #18b4de;
         }
+        .flip {
+          right: 0;
+          span {
+            font-size: 30px;
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 5px;
+            background: #18b4de;
+          }
 
+        }
       }
     }
     .banner-minor {
@@ -100,19 +116,14 @@
         width: 100%;
         opacity:0.6;
         filter: alpha(opacity=60);
-      }
-      .certificate {
-        width: 280px;
-        position: absolute;
-        top: 50%;
-        margin-top: -190px;
-        right: 200px;
-        z-index: 2;
+        vertical-align: top;
       }
       .text-container {
         position: absolute;
-        left: 200px;
+        width: 860px;
+        left: 50%;
         top: 50%;
+        margin-left: -430px;
         margin-top: -150px;
         z-index: 2;
         p {
@@ -127,15 +138,23 @@
           font-size: 20px;
           margin-bottom: 50px;
         }
+        .certificate {
+          width: 280px;
+          position: absolute;
+          top: -60px;
+          right: 0;
+          z-index: 2;
+        }
       }
     }
     .main-page {
       width: 80%;
       min-width: 1200px;
-      background-color: #a0bccf;
+      /*background-color: #a0bccf;*/
+      background-color: #fafafa;
       padding-bottom: 20px;
       margin: 0 auto;
-      .slogen-text {
+      .slogan-text {
         text-align: center;
         color: #000;
         padding: 15px 0;
@@ -272,6 +291,39 @@
           margin: 0 auto;
         }
       }
+      .introduce-container {
+        width: 100%;
+        .introduce-item {
+          .item-left,.item-right {
+            display: inline-block;
+            height: 180px;
+            vertical-align: top;
+          }
+          .item-left {
+            width: 49%;
+            img {
+              width: 300px;
+            }
+          }
+          .item-right {
+            width: 49%;
+            img {
+              width: 300px;
+            }
+          }
+        }
+        .introduce-title {
+          .item-left {
+            width: 29%;
+            img {
+              width: 300px;
+            }
+          }
+          .item-right {
+            width: 69%;
+          }
+        }
+      }
     }
   }
 </style>
@@ -284,10 +336,10 @@
           <li class="nav-title" v-for="(item, index) in nav">{{item}}</li>
         </ul>
         <img class="main-banner-back" :src="banner_img1" alt="" />
-        <section class="text-container">
+        <div class="text-container">
           <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
-          <p>Focus On Studying in Mamaysia</p>
+          <p>Focus On Studying in Malaysia</p>
           <div>
             <span>音乐学相关<i></i></span>
             <span>体育学相关<i></i></span>
@@ -298,12 +350,15 @@
             <span>医学相关<i></i></span>
             <span>法学相关</span>
           </div>
-        </section>
-        <section class="btn learn-more">了解更多</section>
-        <section class="btn flip">
-          <span>&lt;</span>
-          <span>&gt;</span>
-        </section>
+        </div>
+        <div class="learn-flip">
+          <div class="btn learn-more">了解更多</div>
+          <div class="btn flip">
+            <span>&lt;</span>
+            <span>&gt;</span>
+          </div>
+        </div>
+
       </section>
       <section class="banner-minor">
         <img class="banner-minor-back" :src="banner_img2" alt="" />
@@ -312,11 +367,11 @@
           <p>about study aboard</p>
           <p>树人教育是马来西亚留学联会在中国设立的服务<br/>中心，专注马来西亚本硕博留学和寒暑假<br/>游学项目，为多种需求上学人群量身定制留学<br/>方案并提供高质量服务。
             <br/>树人留学是马来西亚留学联会唯一的中国办事<br/>处，拥有多所大学的招生资质。</p>
+          <img class="certificate" :src="certificate_img" alt="" />
         </div>
-        <img class="certificate" :src="certificate_img" alt="" />
       </section>
       <section class="main-page">
-        <section class="slogen-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
+        <section class="slogan-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
         <section class="school-nav">
           <span class="university Private-university">私立大学</span>
           <span class="university public-university">公立大学</span>
@@ -338,7 +393,7 @@
           </ul>
         </section>
         <section class="introduce-container">
-          <div class="introduce-item">
+          <div class="introduce-item introduce-title">
             <div class="item-left">
               <img :src="school_lgr" alt="" />
             </div>
