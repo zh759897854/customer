@@ -410,7 +410,7 @@
       .guide-step-item {
         display: inline-block;
         width: 100%/6;
-        height: 50px;
+        height: 100px;
         position: relative;
         .guide-step-text {
           padding: 5px 0;
@@ -449,12 +449,18 @@
       }
       .guide-step-item:nth-child(odd) {
         .guide-step-icon {
-          top: 50px;
+          top: 100px;
+        }
+        .guide-step-text {
+          top: 130px;
         }
       }
       .guide-step-item:nth-child(even) {
         .guide-step-icon {
-          top: 0;
+          top: 50px;
+        }
+        .guide-step-text {
+          top: 80px;
         }
       }
     }
