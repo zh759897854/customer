@@ -148,10 +148,10 @@
       }
     }
     .main-page {
-      width: 80%;
-      min-width: 1200px;
+      width: 1000px;
+      max-width: 1000px;
       /*background-color: #a0bccf;*/
-      background-color: #fafafa;
+      background-color: #e5e5e5;
       padding-bottom: 20px;
       margin: 0 auto;
       .slogan-text {
@@ -197,43 +197,6 @@
           width: 195px;
         }
       }
-      .advantage {
-        background-color: #fff;
-        h5 {
-          font-size: 20px;
-          text-align: center;
-          color: #000;
-        }
-        h6 {
-          width: 200px;
-          padding: 15px 0;
-          font-size: 13px;
-          color: #000;
-          text-align: center;
-          border-bottom: 1px solid #e5e5e5;
-          margin: 0 auto;
-        }
-        ul {
-          margin-top: 40px;
-          li {
-            box-sizing: border-box;
-            display: inline-block;
-            width: 20%;
-            padding: 0 10px;
-            > div {
-              box-shadow: 0 0 5px #e5e5e5;
-              text-align: center;
-              padding-bottom: 40px;
-              p {
-                padding: 5px 0;
-              }
-              div {
-                padding: 60px 0;
-              }
-            }
-          }
-        }
-      }
       .offer-container {
         background-color: #e5e5e5;
         h5 {
@@ -247,7 +210,7 @@
           font-size: 13px;
           color: #000;
           text-align: center;
-          border-bottom: 1px solid #999;
+          border-bottom: 2px solid #999;
           margin: 0 auto;
         }
         .school-list {
@@ -260,10 +223,12 @@
             width: 100%/3;
             padding: 20px;
             > div {
+              box-sizing: border-box;
               background-color: #999;
               -webkit-border-radius: 8px;
               -moz-border-radius: 8px;
               border-radius: 8px;
+              padding: 10px;
               div {
                 display: inline-block;
                 img {
@@ -287,41 +252,144 @@
           font-size: 13px;
           color: #000;
           text-align: center;
-          border-bottom: 1px solid #999;
+          border-bottom: 2px solid #999;
           margin: 0 auto;
         }
       }
       .introduce-container {
         width: 100%;
+        padding: 10px 0;
+        padding-bottom: 50px;
         .introduce-item {
           .item-left,.item-right {
             display: inline-block;
-            height: 180px;
+            height: 250px;
             vertical-align: top;
+            box-sizing: border-box;
+            padding: 10px;
+            p {
+              color: #000;
+              font-size: 15px;
+              font-weight: 600;
+            }
+            ul {
+              margin-top: 15px;
+              li {
+                padding: 5px 0;
+              }
+            }
+            img {
+              width: 350px;
+              border: none;
+            }
           }
           .item-left {
-            width: 49%;
-            img {
-              width: 300px;
-            }
+            width: 50%;
           }
           .item-right {
-            width: 49%;
-            img {
-              width: 300px;
-            }
+            width: 50%;
           }
         }
         .introduce-title {
+          .item-left,.item-right {
+            height: 150px;
+          }
           .item-left {
             width: 29%;
             img {
-              width: 300px;
+              width: 100%;
             }
           }
           .item-right {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
             width: 69%;
+            padding-left: 20px;
+            p:nth-child(2) {
+              font-weight: normal;
+              line-height: 25px;
+            }
           }
+        }
+        .hot-professional {
+          width: 90%;
+          margin: 0 auto;
+          background-color: #a0bccf;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          border-radius: 8px;
+          padding: 0 10px;
+          padding-bottom: 20px;
+          div {
+            padding: 5px 0;
+            text-align: center;
+            color: #fff;
+          }
+        }
+      }
+      .advantage {
+        background-color: #fff;
+        h5 {
+          font-size: 20px;
+          text-align: center;
+          color: #000;
+        }
+        h6 {
+          width: 200px;
+          padding: 15px 0;
+          font-size: 13px;
+          color: #000;
+          text-align: center;
+          border-bottom: 2px solid #e5e5e5;
+          margin: 0 auto;
+        }
+        ul {
+          margin-top: 40px;
+          li {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 20%;
+            padding: 0 10px;
+            vertical-align: top;
+            > div {
+              box-sizing: border-box;
+              box-shadow: 0 0 5px #e5e5e5;
+              text-align: center;
+              padding-bottom: 20px;
+              height: 250px;
+              p {
+                padding: 5px 0;
+                font-size: 13px;
+              }
+              div {
+                padding: 40px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .page-footer {
+      background-color: #999;
+      .concat-box {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 50px;
+        p {
+          padding-top: 5px;
+          padding-bottom: 15px;
+        }
+        div {
+          padding: 5px 0;
+        }
+      }
+      .QR-box {
+        display: inline-block;
+        > div {
+          display: inline-block;
+          text-align: center;
+          padding: 0 50px;
         }
       }
     }
@@ -439,7 +507,7 @@
             <p>
               <span v-for="(item, inx) in lgrHot">
                 {{item}}
-                <i class="icon-cricle"></i>
+                <i class="icon-cricle" v-if="inx !== lgrHot.length -1"></i>
               </span>
             </p>
           </div>
@@ -490,9 +558,11 @@
           </div>
           <div class="QR-box">
             <div>
+              <img :src="SRQR" alt="" /><br/>
               <span>树人留学公众号二维码</span>
             </div>
             <div>
+              <img :src="teacherQR" alt="" /><br/>
               <span>微信Sally老师二维码</span>
             </div>
           </div>
@@ -619,7 +689,9 @@
               '基本成绩'
             ]
           },
-        ]
+        ],
+        SRQR: require('../../assets/icon/icon-Qr.jpg'),
+        teacherQR: require('../../assets/icon/icon-teacher-MrzQr.jpg')
       }
     },
     mounted() {
