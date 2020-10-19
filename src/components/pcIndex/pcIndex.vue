@@ -406,6 +406,27 @@
         }
       }
     }
+    .guide-step {
+      .guide-step-item {
+        display: inline-block;
+        width: 100%/6;
+        .guide-step-text {
+          padding: 5px 0;
+          i {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            background-repeat: no-repeat;
+            background-image: url("../../assets/icon/icon-logo-guide.jpg");
+            background-size: 380px 60px;
+            background-position: -13px -2px;
+          }
+        }
+      }
+    }
   }
 </style>
 
@@ -558,6 +579,55 @@
         <section class="guide">
           <h5>留学指南</h5>
           <h6>study guide</h6>
+          <div class="guide-step">
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                院校咨询
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                <i></i>
+                院校申请
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                <i></i>
+                官方授权语音培训
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                <i></i>
+                入学前免费培训
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                <i></i>
+                境外接机及生活帮助
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-icon"></span>
+              <span class="guide-step-text">
+                <i></i>
+                开始大马留学生活
+              </span>
+              <i class="guide-step-circle"></i>
+            </div>
+          </div>
         </section>
       </section>
       <section class="page-footer">
