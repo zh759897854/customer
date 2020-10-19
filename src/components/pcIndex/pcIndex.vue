@@ -410,6 +410,7 @@
       .guide-step-item {
         display: inline-block;
         width: 100%/6;
+        height: 50px;
         position: relative;
         .guide-step-text {
           padding: 5px 0;
@@ -437,12 +438,6 @@
           border-right: 1px solid #e5e5e5;
           position: absolute;
         }
-        .guide-step-icon:nth-child(odd) {
-          top: 50px;
-        }
-        .guide-step-icon:nth-child(even) {
-          top: 0;
-        }
         .loop(@n, @i: 1) when (@i =< @n) {
           .guide-step-icon:nth-child(@{i}) {
             left:  (100%/6)*@i;
@@ -451,6 +446,16 @@
         }
 
         .loop(6);
+      }
+      .guide-step-item:nth-child(odd) {
+        .guide-step-icon {
+          top: 50px;
+        }
+      }
+      .guide-step-item:nth-child(even) {
+        .guide-step-icon {
+          top: 0;
+        }
       }
     }
   }
