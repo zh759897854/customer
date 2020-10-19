@@ -414,11 +414,11 @@
         height: 100px;
         position: relative;
         border-bottom: 1px solid #666;
+        margin: 0 auto;
         .guide-step-text {
           padding: 5px 0;
           white-space: nowrap;
           position: absolute;
-          top: -50px;
           left: -20px;
           i {
             display: inline-block;
@@ -442,7 +442,7 @@
         }
         .loop(@n, @i: 1) when (@i =< @n) {
           .guide-step-icon:nth-child(@{i}) {
-            left:  (100%/6)*@i;
+            left:  (100%/5)*(@i - 1);
           }
           .loop(@n, (@i + 1));
         }
@@ -454,7 +454,7 @@
           bottom: 0;
         }
         .guide-step-text {
-          top: 50px;
+          top: 5px;
         }
       }
       .guide-step-item:nth-child(even) {
@@ -462,8 +462,12 @@
           bottom: -50px;
         }
         .guide-step-text {
-          top: 80px;
+          bottom: -90px;
         }
+      }
+      .guide-step-item:last-child {
+        width: 0;
+        border-bottom: none;
       }
     }
   }
@@ -663,7 +667,7 @@
               <span class="guide-step-icon"></span>
               <span class="guide-step-text">
                 <i></i>
-                开始大马留学生活
+                 开始大马留学生活
               </span>
               <i class="guide-step-circle"></i>
             </div>
