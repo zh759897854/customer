@@ -35,7 +35,7 @@
         position: absolute;
         z-index: 102;
         left: 50%;
-        margin-left: -380px;
+        margin-left: -420px;
         top: 5px;
         img {
           width: 100%;
@@ -54,6 +54,7 @@
           color: #fff;
           display: inline-block;
           cursor: pointer;
+          margin: 0 5px;
         }
         .nav-title:hover {
           background-color: #1f90e6;
@@ -823,7 +824,21 @@
         </div>
       </section>
       <template>
-        <el-backtop :bottom="100"></el-backtop>
+        <el-backtop :bottom="100">
+          <div
+              style="{
+        height: 100%;
+        width: 100%;
+        background-color: #f2f5f6;
+        box-shadow: 0 0 6px rgba(0,0,0, .12);
+        text-align: center;
+        line-height: 40px;
+        color: #1989fa;
+      }"
+          >
+            UP
+          </div>
+        </el-backtop>
       </template>
     </div>
   </div>
@@ -1027,23 +1042,23 @@
             break;
           case 1:
             this.navDistance = 1;
-            document.documentElement.scrollTop = 750;
+            document.documentElement.scrollTop = 1150;
             break;
           case 2:
             this.navDistance = 2;
-            document.documentElement.scrollTop = 1250;
+            document.documentElement.scrollTop = 1910;
             break;
           case 3:
             this.navDistance = 3;
-            document.documentElement.scrollTop = 2260;
+            document.documentElement.scrollTop = 2930;
             break;
           case 4:
             this.navDistance = 4;
-            document.documentElement.scrollTop = 3000;
+            document.documentElement.scrollTop = 4000;
             break;
           case 5:
             this.navDistance = 5;
-            document.documentElement.scrollTop = 3000;
+            document.documentElement.scrollTop = 4000;
             break;
         }
       }
