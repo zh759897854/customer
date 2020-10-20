@@ -1,5 +1,9 @@
 <style lang="less">
   #pc {
+		h5 {
+			padding-top: 15px;
+			letter-spacing: 5px;
+		}
     img {
       width: 100px;
     }
@@ -25,6 +29,18 @@
       position: relative;
       min-height: 200px;
       background-color: #000;
+      .shuren-logo {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        z-index: 102;
+        left: 50%;
+        margin-left: -380px;
+        top: 5px;
+        img {
+          width: 100%;
+        }
+      }
       .page-nav {
         position: absolute;
         top: 0;
@@ -32,13 +48,17 @@
         width: 100%;
         text-align: center;
         z-index: 101;
+        font-size: 15px;
         .nav-title {
-          padding: 10px 15px;
+          padding: 20px 15px;
           color: #fff;
           display: inline-block;
           cursor: pointer;
         }
         .nav-title:hover {
+          background-color: #1f90e6;
+        }
+        .active {
           background-color: #1f90e6;
         }
       }
@@ -161,12 +181,12 @@
       max-width: 1000px;
       /*background-color: #a0bccf;*/
       background-color: #e5e5e5;
-      padding-bottom: 20px;
       margin: 0 auto;
       .slogan-text {
         text-align: center;
         color: #000;
         padding: 15px 0;
+				font-weight: 600;
       }
       .school-nav {
         text-align: center;
@@ -197,9 +217,25 @@
           flex-flow: row;
           justify-content: space-between;
           align-items: center;
+          li {
+            cursor: pointer;
+          }
           p {
             text-align: center;
             letter-spacing: 3px;
+						font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+          }
+          li:hover {
+            p {
+              border-color: #999;
+            }
+          }
+          .activeLi {
+            p {
+              border-color: #999;
+            }
           }
         }
         .school_lgr {
@@ -208,13 +244,14 @@
       }
       .offer-container {
         background-color: #e5e5e5;
+				margin-top: 20px;
         h5 {
           font-size: 20px;
           text-align: center;
           color: #000;
         }
         h6 {
-          width: 200px;
+          width: 300px;
           padding: 15px 0;
           font-size: 13px;
           color: #000;
@@ -239,16 +276,28 @@
               border-radius: 8px;
               padding: 10px;
               box-shadow: 0 0 5px #e5e5e5;
+							height: 105px;
               div {
                 display: inline-block;
-                vertical-align: middle;
+                vertical-align: top;
                 white-space: nowrap;
                 img {
                   width: 80px;
+									height: 80px;
+									vertical-align: middle
                 }
+
               }
             }
+						> div:hover {
+							box-shadow: 0 0 8px #666;
+						}
           }
+					.list-right {
+						font-size: 13px;
+						margin-left: 5px;
+						padding-top: 15px;
+					}
         }
       }
       .guide {
@@ -259,7 +308,7 @@
           color: #000;
         }
         h6 {
-          width: 200px;
+          width: 300px;
           padding: 15px 0;
           font-size: 13px;
           color: #000;
@@ -292,6 +341,7 @@
             }
             img {
               width: 350px;
+              height: 202px;
               border: none;
             }
           }
@@ -310,17 +360,19 @@
             width: 29%;
             img {
               width: 100%;
+              height: 100%;
             }
           }
           .item-right {
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            width: 69%;
+            width: 100%;
             padding-left: 20px;
             p:nth-child(2) {
               font-weight: normal;
               line-height: 25px;
+              padding: 10px 0;
             }
           }
         }
@@ -337,18 +389,24 @@
             padding: 5px 0;
             text-align: center;
             color: #fff;
+						font-weight: 600;
           }
+					span {
+						font-weight: 600;
+						font-size: 13px;
+					}
         }
       }
       .advantage {
         background-color: #fff;
+				padding-bottom: 20px;
         h5 {
           font-size: 20px;
           text-align: center;
           color: #000;
         }
         h6 {
-          width: 200px;
+          width: 300px;
           padding: 15px 0;
           font-size: 13px;
           color: #000;
@@ -378,12 +436,16 @@
                 padding: 40px 0;
               }
             }
+						> div:hover {
+							box-shadow: 0 0 8px #666;
+						}
           }
         }
       }
     }
     .page-footer {
       background-color: #999;
+			padding: 10px 0;
       > div {
         text-align: center;
       }
@@ -393,6 +455,7 @@
         padding-right: 50px;
         text-align: left;
         p {
+					font-size: 20px;
           padding-top: 5px;
           padding-bottom: 15px;
         }
@@ -410,6 +473,7 @@
       }
     }
     .guide-step {
+			text-align: center;
       .guide-step-item {
         box-sizing: border-box;
         display: inline-block;
@@ -473,6 +537,68 @@
         border-bottom: none;
       }
     }
+		.guide-step {
+			box-sizing: border-box;
+			height: 200px;
+			padding: 20px 0;
+			.guide-step-circle {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background-color: #999;
+				border-radius: 100%;
+				position: absolute;
+				top: 95px;
+				left: -5px;
+			}
+		}
+		.guide {
+			padding-bottom: 20px;
+			.guide-step-text-special {
+				left: -150px !important;
+			}
+			.guide-step-text-special1 {
+				left: -135px !important;
+			}
+			.guide-step-text-special2 {
+				left: -90px !important;
+			}
+			.guide-step-item:nth-child(2) {
+				.guide-step-text {
+					i {
+						background-position: -72px -2px;
+					}
+				}
+			}
+			.guide-step-item:nth-child(3) {
+				.guide-step-text {
+					i {
+						background-position: -137px -2px;
+					}
+				}
+			}
+			.guide-step-item:nth-child(4) {
+				.guide-step-text {
+					i {
+						background-position: -206px -2px;
+					}
+				}
+			}
+			.guide-step-item:nth-child(5) {
+				.guide-step-text {
+					i {
+						background-position: -270px -2px;
+					}
+				}
+			}
+			.guide-step-item:nth-child(6) {
+				.guide-step-text {
+					i {
+						background-position: -335px -2px;
+					}
+				}
+			}
+		}
   }
 </style>
 
@@ -480,8 +606,11 @@
   <div id="pc">
     <div class="page-banner">
       <section class="banner-main">
+        <div class="shuren-logo">
+          <img :src="shuren_logo" alt="" />
+        </div>
         <ul class="page-nav">
-          <li class="nav-title" v-for="(item, index) in nav">{{item}}</li>
+          <li class="nav-title" :class="{'active' : navDistance === index}" v-for="(item, index) in nav" @click="toBlock(index)">{{item}}</li>
         </ul>
         <img class="main-banner-back" :src="banner_img1" alt="" />
         <div class="text-container">
@@ -526,15 +655,15 @@
         </section>
         <section class="school-logo">
           <ul>
-            <li>
+            <li @click="changeSchool(0)" :class="{'activeLi': activeLi === 0}">
               <img class="school_lgr" :src="school_lgr" alt="" />
               <p>林国荣创意科技大学</p>
             </li>
-            <li>
+            <li @click="changeSchool(1)" :class="{'activeLi': activeLi === 1}">
               <img class="school_tl" :src="school_tl" alt="" />
               <p>泰莱大学</p>
             </li>
-            <li>
+            <li @click="changeSchool(2)" :class="{'activeLi': activeLi === 2}">
               <img class="school_sty" :src="school_sty" alt="" />
               <p>思特雅大学</p>
             </li>
@@ -542,20 +671,17 @@
         </section>
         <section class="introduce-container">
           <div class="introduce-item introduce-title">
-            <div class="item-left">
-              <img :src="school_lgr" alt="" />
-            </div>
+            <!--<div class="item-left">-->
+              <!--<img :src="school_1" alt="" />-->
+            <!--</div>-->
             <div class="item-right">
-              <p>Limkokwing University of Creative Technology</p>
-              <p>林国荣创意科技大学是亚洲高水平、特色大学，是英联邦国家马来西亚知名综合性大学，
-                马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，
-                得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、
-                全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。</p>
+              <p>{{schoolIntroduceEn}}</p>
+              <p>{{schoolIntroduce}}</p>
             </div>
           </div>
           <div class="introduce-item">
             <div class="item-left">
-              <img :src="school_lgr1" alt="" />
+              <img :src="school_2" alt="" />
             </div>
             <div class="item-right">
               <p>林国荣创意科技大学</p>
@@ -573,13 +699,11 @@
               <p>项目特点</p>
               <p>Project characteristics</p>
               <ul>
-                <li><i class="icon-mark"></i>马来西亚排名 No.3 亚洲排名 No.219 （2021）</li>
-                <li><i class="icon-mark"></i>3年可毕业、毕业轻松，一年境外时间不超过2个月</li>
-                <li><i class="icon-mark"></i>回国可做中留服学历认证，认证为全日制博士PHD</li>
+                <li v-for="(item, int) in schoolTrait" :key="int"><i class="icon-mark"></i>{{item}}</li>
               </ul>
             </div>
             <div class="item-right">
-              <img :src="school_lgr2" alt="" />
+              <img :src="school_3" alt="" />
             </div>
           </div>
           <div class="hot-professional">
@@ -615,7 +739,7 @@
                     <img :src="list.imgSrc" alt="" />
                   </div>
                   <div class="list-right">
-                    <p v-for="(listItem, inc) in list.data" :key="inc">{{listItem}}</p>
+                    <p v-for="(listItem, inc) in list.data" :key="inc" v-html="listItem"></p>
                   </div>
                 </div>
               </li>
@@ -636,9 +760,9 @@
             </div>
             <div class="guide-step-item">
               <span class="guide-step-icon"></span>
-              <span class="guide-step-text">
-                <i></i>
+              <span class="guide-step-text guide-step-text-special2">
                 院校申请
+                <i></i>
               </span>
               <i class="guide-step-circle"></i>
             </div>
@@ -652,9 +776,9 @@
             </div>
             <div class="guide-step-item">
               <span class="guide-step-icon"></span>
-              <span class="guide-step-text">
-                <i></i>
+              <span class="guide-step-text guide-step-text-special1">
                 入学前免费培训
+                <i></i>
               </span>
               <i class="guide-step-circle"></i>
             </div>
@@ -668,9 +792,9 @@
             </div>
             <div class="guide-step-item">
               <span class="guide-step-icon"></span>
-              <span class="guide-step-text">
+              <span class="guide-step-text guide-step-text-special">
+                开始大马留学生活
                 <i></i>
-                 开始大马留学生活
               </span>
               <i class="guide-step-circle"></i>
             </div>
@@ -698,6 +822,9 @@
           </div>
         </div>
       </section>
+      <template>
+        <el-backtop :bottom="100"></el-backtop>
+      </template>
     </div>
   </div>
 </template>
@@ -707,6 +834,8 @@
     name: 'pc',
     data() {
       return {
+        navDistance: 0,
+        shuren_logo: require('../../assets/icon/icon-logo-shuren.png'),
         banner_img1: require('../../assets/back/back-banner1.jpg'),
         banner_img2: require('../../assets/back/back-banner2.jpg'),
         certificate_img: require('../../assets/certificate.png'),
@@ -722,8 +851,6 @@
           '留学指南',
           '联系我们'
         ],
-        school_lgr1: require('../../assets/back/university-lgr1.jpg'),
-        school_lgr2: require('../../assets/back/university-lgr2.jpg'),
         lgrHot: ['音乐', '美术', '体育', '医科', '传媒', '心理学', '法律',
                    '社会学', '社会科学与管理学' ,'语言学', '工程技术', '社会科学',  
           '管理学' ,'法学' ,'电子电气工程' ,'计算机科学', '土木工程' ,'化学工程' ,
@@ -821,11 +948,105 @@
           },
         ],
         SRQR: require('../../assets/icon/icon-Qr.jpg'),
-        teacherQR: require('../../assets/icon/icon-teacher-MrzQr.jpg')
+        teacherQR: require('../../assets/icon/icon-teacher-MrzQr.jpg'),
+        activeLi: 0,
+        school_1: require('../../assets/icon/icon-school-lgrkji.jpg'),
+        school_2: require('../../assets/back/university-lgr1.jpg'),
+        school_3: require('../../assets/back/university-lgr2.jpg'),
+        schoolIntroduceEn: 'Limkokwing University of Creative Technology',
+        schoolIntroduce: '林国荣创意科技大学是亚洲高水平、特色大学，是英联邦国家马来西亚知名综合性大学，马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。',
+        schoolTrait: [
+          '马来西亚排名 No.3 亚洲排名 No.219 （2021）',
+          '3年可毕业、毕业轻松，一年境外时间不超过2个月',
+          '回国可做中留服学历认证，认证为全日制博士PHD'
+        ]
       }
     },
     mounted() {
-
+      let that = this;
+      document.body.onscroll = function(e) {
+        that.backTop(e)
+      }
+    },
+    methods: {
+      changeSchool(index) {
+        switch (index) {
+          case 0:
+            this.activeLi = 0;
+            this.school_1 = require('../../assets/icon/icon-school-lgrkji.jpg');
+            this.school_2 = require('../../assets/back/university-lgr1.jpg');
+            this.school_3 = require('../../assets/back/university-lgr2.jpg');
+            this.schoolIntroduceEn = 'Limkokwing University of Creative Technology';
+            this.schoolIntroduce = '林国荣创意科技大学是亚洲高水平、特色大学，是英联邦国家马来西亚知名综合性大学，马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。';
+            this.schoolTrait = [
+              '马来西亚排名 No.3 亚洲排名 No.219 （2021））',
+              '3年可毕业、毕业轻松，一年境外时间不超过2个月',
+              '回国可做中留服学历认证，认证为全日制博士PHD'
+            ]
+            break;
+          case 1:
+            this.activeLi = 1;
+            this.school_1 = require('../../assets/icon/icon-school-tl.jpg');
+            this.school_2 = require('../../assets/back/university-tldx1.jpg');
+            this.school_3 = require('../../assets/back/university-tldx2.jpg');
+            this.schoolIntroduceEn = 'Taylor\'s University';
+            this.schoolIntroduce = '泰莱大学创立于1969年，是马来西亚历史悠久及最杰出的私立大学，享有崇高的信誉。(QS2021世界大学排名379)，它拥有三十多年的卓越教学经验，向以优良的学术传统著称。';
+            this.schoolTrait = [
+              '马来西亚排名 No. 亚洲排名 No. 世界排名 No.379（2021）',
+              '3年可毕业、毕业轻松，一年境外时间不超过2个月',
+              '回国可做中留服学历认证，认证为全日制博士PHD'
+            ]
+            break;
+          case 2:
+            this.activeLi = 2;
+            this.school_1 = require('../../assets/icon/icon-school-sty.jpg');
+            this.school_2 = require('../../assets/back/university-stydx1.jpg');
+            this.school_3 = require('../../assets/back/university-stydx2.jpg');
+            this.schoolIntroduceEn = 'Asia Pacific University of Technology &Innovation';
+            this.schoolIntroduce = '亚太科技大学的教育以科技为核心，提供了多层次的教育模式。亚太科技大学的目标是通过学校的教育项目，培育和鼓励创新意识，培养学生成为能够学习、领悟并且能够以不同的角度独立思考的人才。';
+            this.schoolTrait = [
+              '马来西亚排名 No. 亚洲排名 No. 世界排名 No.（2021）',
+              '3年可毕业、毕业轻松，一年境外时间不超过2个月',
+              '回国可做中留服学历认证，认证为全日制博士PHD'
+            ]
+            break;
+        }
+      },
+      backTop(e) {
+        let scrollDom = e.target;
+        let scrollDistance = window.pageYOffset;
+        if (scrollDistance === 0) {
+          this.navDistance = 0;
+        }
+      },
+      toBlock(index) {
+        switch (index) {
+          case 0:
+            this.navDistance = 0;
+            document.documentElement.scrollTop = 0;
+            break;
+          case 1:
+            this.navDistance = 1;
+            document.documentElement.scrollTop = 750;
+            break;
+          case 2:
+            this.navDistance = 2;
+            document.documentElement.scrollTop = 1250;
+            break;
+          case 3:
+            this.navDistance = 3;
+            document.documentElement.scrollTop = 2260;
+            break;
+          case 4:
+            this.navDistance = 4;
+            document.documentElement.scrollTop = 3000;
+            break;
+          case 5:
+            this.navDistance = 5;
+            document.documentElement.scrollTop = 3000;
+            break;
+        }
+      }
     }
   }
 </script>
