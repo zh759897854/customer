@@ -4,7 +4,7 @@
 
 <template>
   <div id="mobile">
-    mobile
+    持续开发中，敬请期待
   </div>
 </template>
 
