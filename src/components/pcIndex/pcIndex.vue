@@ -2,7 +2,7 @@
   #pc {
     padding-top: 60px;
     .nave {
-      background-color: #545c64;
+      background-color: #606266;
       text-align: center;
       position: fixed;
       top: 0;
@@ -18,7 +18,7 @@
           background-size: 100%;
           background-position: center;
           margin: 0 30px !important;
-          background-color: #545c64;
+          background-color: #606266;
           cursor: default !important;
         }
         .shuren-logo:hover {
@@ -26,9 +26,12 @@
         }
       }
     }
-		h5 {
+		.h5 {
+      font-size: 18px;
+      font-weight: bold;
 			padding-top: 15px;
 			letter-spacing: 5px;
+      text-align: center;
 		}
     img {
       width: 100px;
@@ -272,11 +275,6 @@
       .offer-container {
         background-color: #e5e5e5;
 				margin-top: 20px;
-        h5 {
-          font-size: 20px;
-          text-align: center;
-          color: #000;
-        }
         h6 {
           width: 300px;
           padding: 15px 0;
@@ -329,11 +327,7 @@
       }
       .guide {
         background-color: #fff;
-        h5 {
-          font-size: 20px;
-          text-align: center;
-          color: #000;
-        }
+
         h6 {
           width: 300px;
           padding: 15px 0;
@@ -427,11 +421,6 @@
       .advantage {
         background-color: #fff;
 				padding-bottom: 20px;
-        h5 {
-          font-size: 20px;
-          text-align: center;
-          color: #000;
-        }
         h6 {
           width: 300px;
           padding: 15px 0;
@@ -637,7 +626,7 @@
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
-          background-color="#545c64"
+          background-color="#606266"
           text-color="#fff"
           active-text-color="#3786c8">
         <el-menu-item class="shuren-logo"></el-menu-item>
@@ -763,7 +752,7 @@
           </div>
         </section>
         <section class="advantage">
-          <h5>五大优势</h5>
+          <div class="h5">五大优势</div>
           <h6>advantage</h6>
           <ul>
             <li v-for="(tage, ind) in tages" :key="ind">
@@ -775,7 +764,7 @@
           </ul>
         </section>
         <section class="offer-container">
-          <h5>一切以offer为导向</h5>
+          <div class="h5">一切以offer为导向</div>
           <h6>Guiding for applying offers</h6>
           <div class="school-list">
             <ul>
@@ -793,7 +782,7 @@
           </div>
         </section>
         <section class="guide">
-          <h5>留学指南</h5>
+          <div class="h5">留学指南</div>
           <h6>study guide</h6>
           <div class="guide-step">
             <div class="guide-step-item">
