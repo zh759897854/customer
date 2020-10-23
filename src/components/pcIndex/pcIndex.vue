@@ -1,4 +1,7 @@
 <style lang="less">
+  body {
+    transition: 0.5s;
+  }
   #pc {
     padding-top: 60px;
     .nave {
@@ -630,13 +633,13 @@
           text-color="#fff"
           active-text-color="#3786c8">
         <el-menu-item class="shuren-logo"></el-menu-item>
-        <el-menu-item index="1">首页</el-menu-item>
-        <el-menu-item index="2">关于树人</el-menu-item>
-        <el-menu-item index="3">学校介绍</el-menu-item>
-        <el-menu-item index="4">大马优势</el-menu-item>
-        <el-menu-item index="5">成功案例</el-menu-item>
-        <el-menu-item index="6">留学指南</el-menu-item>
-        <el-menu-item index="7">联系我们</el-menu-item>
+        <el-menu-item index="1" @click="toBlock(0)">首页</el-menu-item>
+        <el-menu-item index="2" @click="toBlock(1)">关于树人</el-menu-item>
+        <el-menu-item index="3" @click="toBlock(2)">学校介绍</el-menu-item>
+        <el-menu-item index="4" @click="toBlock(3)">大马优势</el-menu-item>
+        <el-menu-item index="5" @click="toBlock(4)">成功案例</el-menu-item>
+        <el-menu-item index="6" @click="toBlock(5)">留学指南</el-menu-item>
+        <el-menu-item index="7" @click="toBlock(6)">联系我们</el-menu-item>
       </el-menu>
     </div>
     <div class="page-banner">
@@ -1069,6 +1072,7 @@
         }
       },
       toBlock(index) {
+        document.documentElement.style.transition = '0.5s';
         switch (index) {
           case 0:
             this.navDistance = 0;
