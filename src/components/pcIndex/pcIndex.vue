@@ -623,12 +623,12 @@
 
 <template>
   <div id="pc">
+    <!--页面导航-->
     <div class="nave">
       <el-menu
-          :default-active="'1'"
+          default-active="1"
           class="el-menu-demo"
           mode="horizontal"
-          @select="handleSelect"
           background-color="#606266"
           text-color="#fff"
           active-text-color="#3786c8">
@@ -642,28 +642,17 @@
         <el-menu-item index="7" @click="toBlock(6)">联系我们</el-menu-item>
       </el-menu>
     </div>
-    <div class="page-banner">
+    <!--主页面-->
+    <div class="page-container">
+      <!--主页面banner-->
       <section class="banner-main">
-        <!--<div class="shuren-logo">-->
-          <!--<img :src="shuren_logo" alt="" />-->
-        <!--</div>-->
-        <!--<ul class="page-nav">-->
-          <!--<li class="nav-title" :class="{'active' : navDistance === index}" v-for="(item, index) in nav" @click="toBlock(index)">{{item}}</li>-->
-        <!--</ul>-->
         <img class="main-banner-back" :src="banner_img1" alt="" />
         <div class="text-container">
           <p class="study-abroad">专注马来西亚留学</p>
           <p>全世界学费较低的硕博留学</p>
           <p>Focus On Studying in Malaysia</p>
           <div>
-            <span>音乐学相关<i></i></span>
-            <span>体育学相关<i></i></span>
-            <span>美术学<i></i></span>
-            <span>设计学<i></i></span>
-            <span>传媒学<i></i></span>
-            <span>教育学相关<i></i></span>
-            <span>医学相关<i></i></span>
-            <span>法学相关</span>
+            <span v-for="(item, ina) in professional" :key="ina">{{item}}<i v-if="ina < professional.length -1"></i></span>
           </div>
         </div>
         <div class="learn-flip">
@@ -673,8 +662,8 @@
             <span>&gt;</span>
           </div>
         </div>
-
       </section>
+      <!--主页面二级banner-->
       <section class="banner-minor">
         <img class="banner-minor-back" :src="banner_img2" alt="" />
         <div class="text-container">
@@ -685,12 +674,15 @@
           <img class="certificate" :src="certificate_img" alt="" />
         </div>
       </section>
+      <!--主页面body-->
       <section class="main-page">
         <section class="slogan-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
+
         <section class="school-nav">
           <span class="university Private-university">私立大学</span>
           <span class="university public-university">公立大学</span>
         </section>
+
         <section class="school-logo">
           <ul>
             <li @click="changeSchool(0)" :class="{'activeLi': activeLi === 0}">
@@ -707,11 +699,9 @@
             </li>
           </ul>
         </section>
+
         <section class="introduce-container">
           <div class="introduce-item introduce-title">
-            <!--<div class="item-left">-->
-              <!--<img :src="school_1" alt="" />-->
-            <!--</div>-->
             <div class="item-right">
               <p>{{schoolIntroduceEn}}</p>
               <p>{{schoolIntroduce}}</p>
@@ -754,6 +744,7 @@
             </p>
           </div>
         </section>
+
         <section class="advantage">
           <div class="h5">五大优势</div>
           <h6>advantage</h6>
@@ -766,6 +757,7 @@
             </li>
           </ul>
         </section>
+
         <section class="offer-container">
           <div class="h5">一切以offer为导向</div>
           <h6>Guiding for applying offers</h6>
@@ -784,6 +776,7 @@
             </ul>
           </div>
         </section>
+
         <section class="guide">
           <div class="h5">留学指南</div>
           <h6>study guide</h6>
@@ -839,49 +832,50 @@
           </div>
         </section>
       </section>
-      <section class="page-footer">
-        <div>
-          <div class="concat-box">
-            <p>联系我们</p>
-            <div>电话：16631136917</div>
-            <div>微信：16631136917</div>
-            <div>地址：河北省石家庄市金源商务广场B713</div>
-            <div>电子邮箱：12596258@qq.com</div>
+    </div>
+    <!--底部-->
+    <section class="page-footer">
+      <div>
+        <div class="concat-box">
+          <p>联系我们</p>
+          <div>电话：16631136917</div>
+          <div>微信：16631136917</div>
+          <div>地址：河北省石家庄市金源商务广场B713</div>
+          <div>电子邮箱：12596258@qq.com</div>
+        </div>
+        <div class="QR-box">
+          <div>
+            <img :src="SRQR" alt="" /><br/>
+            <span>树人留学公众号二维码</span>
           </div>
-          <div class="QR-box">
-            <div>
-              <img :src="SRQR" alt="" /><br/>
-              <span>树人留学公众号二维码</span>
-            </div>
-            <div>
-              <img :src="teacherQR" alt="" /><br/>
-              <span>微信Sally老师二维码</span>
-            </div>
+          <div>
+            <img :src="teacherQR" alt="" /><br/>
+            <span>微信Sally老师二维码</span>
           </div>
         </div>
-      </section>
-      <template>
-        <el-backtop :bottom="100">
-          <div
-              style="{
-        height: 100%;
-        width: 100%;
-        background-color: #f2f5f6;
-        box-shadow: 0 0 6px rgba(0,0,0, .12);
-        text-align: center;
-        line-height: 40px;
-        color: #1989fa;
-      }"
-          >
-            UP
-          </div>
-        </el-backtop>
-      </template>
-    </div>
+      </div>
+    </section>
+    <template>
+      <el-backtop :bottom="100">
+        <div
+            style="{
+                height: 100%;
+                width: 100%;
+                background-color: #f2f5f6;
+                box-shadow: 0 0 6px rgba(0,0,0, .12);
+                text-align: center;
+                line-height: 40px;
+                color: #1989fa;
+              }">UP
+        </div>
+      </el-backtop>
+    </template>
   </div>
 </template>
 
 <script>
+  let pageHeight = document.documentElement.clientHeight;
+  console.log(pageHeight)
   export default {
     name: 'pc',
     data() {
@@ -894,6 +888,7 @@
         school_lgr: require('../../assets/icon/icon-school-lgrkji.jpg'),
         school_tl: require('../../assets/icon/icon-school-sty.jpg'),
         school_sty: require('../../assets/icon/icon-school-tl.jpg'),
+        professional: ['音乐学相关', '体育学相关', '美术学', '设计学', '传媒学', '教育学相关', '医学相关', '法学相关'],
         nav: [
           '首页',
           '关于树人',
