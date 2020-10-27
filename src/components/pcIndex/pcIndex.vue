@@ -225,7 +225,7 @@
         text-align: center;
         .university {
           display: inline-block;
-          background-color: #14b8d4;
+          background-color: #3786c8;
           padding: 7px 10px;
           font-weight: 600;
           color: #fff;
@@ -291,7 +291,7 @@
           font-size: 13px;
           color: #000;
           text-align: center;
-          border-bottom: 2px solid #999;
+          border-bottom: 2px solid #e5e5e5;
           margin: 0 auto;
         }
         .school-list {
@@ -344,7 +344,7 @@
           font-size: 13px;
           color: #000;
           text-align: center;
-          border-bottom: 2px solid #999;
+          border-bottom: 2px solid #e5e5e5;
           margin: 0 auto;
         }
       }
