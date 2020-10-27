@@ -213,8 +213,7 @@
     .main-page {
       width: 1000px;
       max-width: 1000px;
-      /*background-color: #a0bccf;*/
-      background-color: #e5e5e5;
+      background-color: #F2F6FC;
       margin: 0 auto;
       .slogan-text {
         text-align: center;
@@ -226,10 +225,11 @@
         text-align: center;
         .university {
           display: inline-block;
-          background-color: #41627c;
+          background-color: #14b8d4;
           padding: 7px 10px;
           font-weight: 600;
-          color: #000;
+          color: #fff;
+          cursor: pointer;
         }
         .Private-university {
           padding-right: 50px;
@@ -283,7 +283,7 @@
         }
       }
       .offer-container {
-        background-color: #e5e5e5;
+        background-color: #F2F6FC;
 				margin-top: 20px;
         h6 {
           width: 300px;
@@ -410,16 +410,16 @@
         .hot-professional {
           width: 90%;
           margin: 0 auto;
-          background-color: #a0bccf;
+          background-color: #fff;
           -webkit-border-radius: 8px;
           -moz-border-radius: 8px;
           border-radius: 8px;
           padding: 0 10px;
           padding-bottom: 20px;
+          color: #000;
           div {
             padding: 5px 0;
             text-align: center;
-            color: #fff;
 						font-weight: 600;
           }
 					span {
@@ -470,8 +470,9 @@
       }
     }
     .page-footer {
-      background-color: #999;
+      background-color: #606266;
 			padding: 10px 0;
+      color: #fff;
       > div {
         text-align: center;
       }
@@ -625,6 +626,9 @@
 				}
 			}
 		}
+    .is-active {
+      font-weight: 700;
+    }
   }
 </style>
 
