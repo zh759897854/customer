@@ -4,6 +4,7 @@
   }
   #pc {
     padding-top: 60px;
+    min-width: 1200px;
     .nave {
       background-color: #606266;
       text-align: center;
@@ -226,19 +227,25 @@
         .university {
           display: inline-block;
           background-color: #41627c;
-          padding: 2px 10px;
+          padding: 7px 10px;
           font-weight: 600;
           color: #000;
         }
         .Private-university {
           padding-right: 50px;
-          clip-path: polygon(0 0, 124px 0, 85px 25px, 0 124px);
+          clip-path: polygon(0 0, 124px 0, 85px 35px, 0 124px);
           margin-right: -17px;
+          -webkit-border-radius: 3px 0 0 3px;
+          -moz-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
         }
         .public-university {
           padding-left: 50px;
           margin-left: -17px;
-          clip-path: polygon(39px 0, 124px 0, 124px 25px, 0 25px);
+          clip-path: polygon(39px 0, 124px 0, 124px 35px, 0 35px);
+          -webkit-border-radius: 0 3px 3px 0;
+          -moz-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
         }
       }
       .school-logo {
@@ -841,7 +848,7 @@
           <div>电话：16631136917</div>
           <div>微信：16631136917</div>
           <div>地址：河北省石家庄市金源商务广场B713</div>
-          <div>电子邮箱：12596258@qq.com</div>
+          <div>电子邮箱：shurenliuxuevip@126.com</div>
         </div>
         <div class="QR-box">
           <div>
@@ -851,6 +858,10 @@
           <div>
             <img :src="teacherQR" alt="" /><br/>
             <span>微信Sally老师二维码</span>
+          </div>
+          <div>
+            <img :src="teacherQR" alt="" /><br/>
+            <span>微信Anna老师二维码</span>
           </div>
         </div>
       </div>
@@ -996,6 +1007,7 @@
         ],
         SRQR: require('../../assets/icon/icon-Qr.jpg'),
         teacherQR: require('../../assets/icon/icon-teacher-MrzQr.jpg'),
+        teacherAnna: require('../../assets/icon/icn-teacher-Anna.png'),
         activeLi: 0,
         school_1: require('../../assets/icon/icon-school-lgrkji.jpg'),
         school_2: require('../../assets/back/university-lgr1.jpg'),
