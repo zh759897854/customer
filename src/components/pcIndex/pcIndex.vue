@@ -690,8 +690,8 @@
         <section class="slogan-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
 
         <section class="school-nav">
-          <span class="university Private-university">私立大学</span>
-          <span class="university public-university">公立大学</span>
+          <span class="university Private-university" @click="universityChange(0)">私立大学</span>
+          <span class="university public-university" @click="universityChange(1)">公立大学</span>
         </section>
 
         <section class="school-logo">
@@ -1110,6 +1110,9 @@
             document.documentElement.scrollTop = 4000;
             break;
         }
+      },
+      universityChange(type) {
+
       }
     }
   }
