@@ -231,6 +231,10 @@
           color: #fff;
           cursor: pointer;
         }
+        .university:hover {
+          background-color: #3786c8;
+          color: #fff;
+        }
         .Private-university {
           padding-right: 50px;
           clip-path: polygon(0 0, 124px 0, 85px 35px, 0 124px);
@@ -247,6 +251,10 @@
           -moz-border-radius: 0 3px 3px 0;
           border-radius: 0 3px 3px 0;
         }
+        .activeSchool {
+          background-color: #e5e5e5;
+          color: #000;
+        }
       }
       .school-logo {
         padding-top: 15px;
@@ -256,9 +264,22 @@
           display: flex;
           flex-flow: row;
           justify-content: space-between;
-          align-items: center;
+          align-items: start;
           li {
             cursor: pointer;
+            width: 100px;
+            text-align: center;
+            div {
+              width: 100px;
+              height: 100px;
+              background-color: #fff;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              img {
+                width: 100px;
+              }
+            }
           }
           p {
             text-align: center;
@@ -279,9 +300,6 @@
               border-color: #3786c8;
             }
           }
-        }
-        .school_lgr {
-          width: 195px;
         }
       }
       .offer-container {
@@ -697,23 +715,49 @@
         <section class="slogan-text">专注名校申请<i class="icon-cricle"></i>完成数百万学子的留学梦</section>
 
         <section class="school-nav">
-          <span class="university Private-university" @click="universityChange(0)">私立大学</span>
-          <span class="university public-university" @click="universityChange(1)">公立大学</span>
+          <span class="university Private-university" :class="{'activeSchool': pritveApublic}" @click="universityChange(0)">私立大学</span>
+          <span class="university public-university" :class="{'activeSchool': !pritveApublic}" @click="universityChange(1)">公立大学</span>
         </section>
 
         <section class="school-logo">
-          <ul>
+          <ul v-if="pritveApublic">
             <li @click="changeSchool(0)" :class="{'activeLi': activeLi === 0}">
-              <img class="school_lgr" :src="school_lgr" alt="" />
+              <div>
+                <img :src="school_lgr" alt="" />
+              </div>
               <p>林国荣创意科技大学</p>
             </li>
             <li @click="changeSchool(1)" :class="{'activeLi': activeLi === 1}">
-              <img class="school_tl" :src="school_tl" alt="" />
+              <div>
+                <img class="school_tl" :src="school_tl" alt="" />
+              </div>
               <p>泰莱大学</p>
             </li>
             <li @click="changeSchool(2)" :class="{'activeLi': activeLi === 2}">
-              <img class="school_sty" :src="school_sty" alt="" />
+              <div>
+                <img class="school_sty" :src="school_sty" alt="" />
+              </div>
               <p>思特雅大学</p>
+            </li>
+          </ul>
+          <ul v-else>
+            <li @click="changeSchool(0)" :class="{'activeLi': activeLi === 3}">
+              <div>
+                <img class="school_tl" :src="school_tl" alt="" />
+              </div>
+              <p>博特拉大学</p>
+            </li>
+            <li @click="changeSchool(1)" :class="{'activeLi': activeLi === 4}">
+              <div>
+                <img class="school_tl" :src="school_tl" alt="" />
+              </div>
+              <p>国立大学</p>
+            </li>
+            <li @click="changeSchool(2)" :class="{'activeLi': activeLi === 5}">
+              <div>
+                <img class="school_tl" :src="school_tl" alt="" />
+              </div>
+              <p>理科大学</p>
             </li>
           </ul>
         </section>
@@ -906,7 +950,9 @@
         school_lgr: require('../../assets/icon/icon-school-lgrkji.jpg'),
         school_tl: require('../../assets/icon/icon-school-sty.jpg'),
         school_sty: require('../../assets/icon/icon-school-tl.jpg'),
-        professional: ['音乐学相关', '体育学相关', '美术学', '设计学', '传媒学', '教育学相关', '医学相关', '法学相关'],
+        professional: ['音乐学相关',
+          '体育学相关', '美术学', '设计学', '传媒学', '教育学相关', '医学相关', '法学相关'],
+        pritveApublic: false,
         nav: [
           '首页',
           '关于树人',
@@ -1020,7 +1066,8 @@
         school_2: require('../../assets/back/university-lgr1.jpg'),
         school_3: require('../../assets/back/university-lgr2.jpg'),
         schoolIntroduceEn: 'Limkokwing University of Creative Technology',
-        schoolIntroduce: '林国荣创意科技大学是亚洲高水平、特色大学，是英联邦国家马来西亚知名综合性大学，马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。',
+        schoolIntroduce: '林国荣创意科技大学是亚洲高水平、' +
+          '特色大学，是英联邦国家马来西亚知名综合性大学，马来西亚艺术类专业大学排名第一。作为具有全球化创意教育视野的教育旗舰，林国荣创意科技大学赢得了许多殊荣，得到了马来西亚政府及社会的广泛肯定与认同。马来西亚教育部曾为林国荣创意科技大学颁发了国际学生最高入读率奖、全球化教育特别奖，同时，马来西亚国际贸易和工业部为其颁发过杰出人才输出奖。',
         schoolTrait: [
           '马来西亚排名 No.3 亚洲排名 No.219 （2021）',
           '3年可毕业、毕业轻松，一年境外时间不超过2个月',
@@ -1135,7 +1182,7 @@
         }
       },
       universityChange(type) {
-
+        this.pritveApublic = !this.pritveApublic;
       }
     }
   }
