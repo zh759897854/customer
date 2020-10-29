@@ -266,15 +266,17 @@
 						font-weight: 600;
             padding-bottom: 5px;
             border-bottom: 2px solid transparent;
+            color: #999;
           }
           li:hover {
             p {
-              border-color: #999;
+              border-color: #3786c8;
+              color: #3786c8;
             }
           }
           .activeLi {
             p {
-              border-color: #999;
+              border-color: #3786c8;
             }
           }
         }
@@ -417,10 +419,15 @@
           padding: 0 10px;
           padding-bottom: 20px;
           color: #000;
+          border: 1px solid #3786c8;
+          overflow: hidden;
           div {
-            padding: 5px 0;
+            padding: 8px 0;
             text-align: center;
 						font-weight: 600;
+            background-color: #3786c8;
+            margin: 0 -10px;
+            color: #fff;
           }
 					span {
 						font-weight: 600;
@@ -723,13 +730,10 @@
               <img :src="school_2" alt="" />
             </div>
             <div class="item-right">
-              <p>林国荣创意科技大学</p>
-              <p>Limkokwing University of Creative Technology</p>
+              <p>{{schoolCost.schoolName}}</p>
+              <p>{{schoolCost.schoolEN}}</p>
               <ul>
-                <li><i class="icon-mark"></i>学费：¥3万/3年</li>
-                <li><i class="icon-mark"></i>授课语言：英文授课、全程协助</li>
-                <li><i class="icon-mark"></i>申请日期：全年</li>
-                <li><i class="icon-mark"></i>入学日期：全年均可</li>
+                <li v-for="(item, ints) in schoolCost.data" :key="ints"><i class="icon-mark"></i>{{item}}</li>
               </ul>
             </div>
           </div>
@@ -890,7 +894,6 @@
 
 <script>
   let pageHeight = document.documentElement.clientHeight;
-  console.log(pageHeight)
   export default {
     name: 'pc',
     data() {
@@ -1022,7 +1025,12 @@
           '马来西亚排名 No.3 亚洲排名 No.219 （2021）',
           '3年可毕业、毕业轻松，一年境外时间不超过2个月',
           '回国可做中留服学历认证，认证为全日制博士PHD'
-        ]
+        ],
+        schoolCost: {
+          schoolName: '林国荣创意科技大学',
+          schoolEN: 'Limkokwing University of Creative Technology',
+          data: ['学费：¥3万/3年', '授课语言：英文授课、全程协助', '申请日期：全年', '入学日期：全年均可']
+        }
       }
     },
     mounted() {
@@ -1045,7 +1053,12 @@
               '马来西亚排名 No.3 亚洲排名 No.219 （2021））',
               '3年可毕业、毕业轻松，一年境外时间不超过2个月',
               '回国可做中留服学历认证，认证为全日制博士PHD'
-            ]
+            ];
+            this.schoolCost = {
+              schoolName: '林国荣创意科技大学',
+              schoolEN: 'Limkokwing University of Creative Technology',
+              data: ['学费：¥3万/3年', '授课语言：英文授课、全程协助', '申请日期：全年', '入学日期：全年均可']
+            };
             break;
           case 1:
             this.activeLi = 1;
@@ -1058,7 +1071,12 @@
               '马来西亚排名 No. 亚洲排名 No. 世界排名 No.379（2021）',
               '3年可毕业、毕业轻松，一年境外时间不超过2个月',
               '回国可做中留服学历认证，认证为全日制博士PHD'
-            ]
+            ];
+            this.schoolCost = {
+              schoolName: '泰莱大学',
+              schoolEN: 'Taylor\'s University',
+              data: ['学费：¥10万/3年', '授课语言：英文授课、全程协助', '申请日期：全年', '入学日期：全年均可']
+            };
             break;
           case 2:
             this.activeLi = 2;
@@ -1071,7 +1089,12 @@
               '马来西亚排名 No. 亚洲排名 No. 世界排名 No.（2021）',
               '3年可毕业、毕业轻松，一年境外时间不超过2个月',
               '回国可做中留服学历认证，认证为全日制博士PHD'
-            ]
+            ];
+            this.schoolCost = {
+              schoolName: '思特雅大学',
+              schoolEN: 'Asia Pacific University of Technology &Innovation',
+              data: ['学费：¥6万/3年', '授课语言：英文授课、全程协助', '申请日期：全年', '入学日期：全年均可']
+            };
             break;
         }
       },
