@@ -252,7 +252,7 @@
           border-radius: 0 3px 3px 0;
         }
         .activeSchool {
-          background-color: #e5e5e5;
+          background-color: #fff;
           color: #000;
         }
       }
