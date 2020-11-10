@@ -1,51 +1,58 @@
 <style lang="less">
-  .nave {
-    background-color: #545c64;
-    text-align: center;
-    position: fixed;
+  #mobile {
     width: 100%;
-    .el-menu {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  .page-main {
+    text-align: center;
+    color: #E6A23C;
+    padding-top: 30px;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    .icon {
+      margin: 30px;
+      transform: scale(1.5);
+    }
+    p {
+      text-align: center;
+      padding: 0 20px;
+    }
+    .icon-teacher {
       display: inline-block;
-      vertical-align: top;
-      border-bottom: none !important;
-      .shuren-logo {
-        background-image: url("../../assets/icon/icon-logo-shuren.png");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-        margin: 0 30px !important;
-        background-color: #545c64;
-        cursor: default !important;
-      }
-      .shuren-logo:hover {
-        background-color: transparent !important;
-      }
+      width: 100px;
+      height: 100px;
+    }
+    > div {
+      display: inline-block;
     }
   }
+  .hide {
+    display: none;
+  }
+
 </style>
 
 <template>
   <div id="mobile">
-    <div class="nave">
-      <el-menu
-          :default-active="'1'"
-          class="el-menu-demo"
-          mode="horizontal"
-          @select="handleSelect"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#3786c8">
-        <el-menu-item class="shuren-logo"></el-menu-item>
-        <el-menu-item index="1">首页</el-menu-item>
-        <el-menu-item index="2">关于树人</el-menu-item>
-        <el-menu-item index="3">学校介绍</el-menu-item>
-        <el-menu-item index="4">大马优势</el-menu-item>
-        <el-menu-item index="5">成功案例</el-menu-item>
-        <el-menu-item index="6">留学指南</el-menu-item>
-        <el-menu-item index="7">联系我们</el-menu-item>
-      </el-menu>
+    <div class="page-main hide">
+      <i class="icon el-icon-s-promotion">&nbsp;error:404</i>
+      <p>哎呀，对不起，本站移动端正在建设中，请用PC端继续访问本站！</p>
+      <p>或者添加下方老师联系方式直接咨询</p>
+      <div>
+        <img class="icon-teacher" :src="teacherQR" alt="" /><br/>
+        <p>微信Sally老师</p>
+      </div>
+      <div>
+        <img class="icon-teacher" :src="teacherAnna" alt="" /><br/>
+        <p>微信Anna老师</p>
+      </div>
     </div>
-    <div class="page-main"></div>
+    <iframe id="iframe" src="static/lx/page/wap/index.html"
+            height='auto'
+            width='100%'
+            frameborder='0'
+            scrolling='no'
+            onload='this.height=3200'></iframe>
   </div>
 </template>
 
@@ -54,11 +61,18 @@
     name: 'mobile',
     data() {
       return {
-
+        teacherQR: require('../../assets/icon/icon-teacher-MrzQr.jpg'),
+        teacherAnna: require('../../assets/icon/icn-teacher-Anna.png'),
       }
     },
-    mounted() {
-
+    created() {
+      // let that = this
+      // //不是 iphone ipad就不执行了
+      // if (!navigator.userAgent.match(/iPad|iPhone/i))
+      //   return false;
+      // //获取子iframe
+      // var iframebody = document.getElementById('iframe').contentWindow.document.body;
+      // iframebody.style.width = document.body.clientWidth+'px';
     }
   }
 </script>
