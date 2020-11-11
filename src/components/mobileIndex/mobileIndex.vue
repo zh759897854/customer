@@ -52,7 +52,8 @@
             width='100%'
             frameborder='0'
             scrolling='no'
-            onload='this.height=3200'></iframe>
+            onload='this.height=3200'>
+    </iframe>
   </div>
 </template>
 
