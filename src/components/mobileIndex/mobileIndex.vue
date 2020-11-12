@@ -67,13 +67,13 @@
       }
     },
     created() {
-      // let that = this
-      // //不是 iphone ipad就不执行了
-      // if (!navigator.userAgent.match(/iPad|iPhone/i))
-      //   return false;
-      // //获取子iframe
-      // var iframebody = document.getElementById('iframe').contentWindow.document.body;
-      // iframebody.style.width = document.body.clientWidth+'px';
+      let that = this
+      //不是 iphone ipad就不执行了
+      if (!navigator.userAgent.match(/iPad|iPhone/i))
+        return false;
+      //获取子iframe
+      var iframebody = document.getElementById('iframe').contentWindow.document.body;
+      iframebody.style.width = document.body.clientWidth+'px';
     }
   }
 </script>
