@@ -23,7 +23,6 @@
 			// 根据平台信息选择显示哪个组件
 			console.log(this.$Plateform);
 			this.curComponent = this.$Plateform ? 'mobile' : 'pc'
-			// this.curComponent = this.$Plateform ? 'pc' : 'mobile'
 		}
 	}
 
